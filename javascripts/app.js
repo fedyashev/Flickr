@@ -27,7 +27,8 @@ var main = function () {
           $.getJSON(setUrl($text), function(flickrResponse) {
             var $list = $(".content");
             flickrResponse.items.forEach(function (photo) {
-              var $img = $("<img src=\"" + photo.media.m + "\">");
+              var $img = $("<img>");
+              $img.attr("src", photo.media.m);
               $list.append($img);
             });
           });
