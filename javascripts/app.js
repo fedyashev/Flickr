@@ -28,8 +28,10 @@ var main = function () {
             var $list = $(".content");
             flickrResponse.items.forEach(function (photo) {
               var $img = $("<img>");
+              $img.hide();
               $img.attr("src", photo.media.m);
               $list.append($img);
+              $img.fadeIn(1000);
             });
           });
         $("input").val("");
